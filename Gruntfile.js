@@ -1,6 +1,6 @@
 /*
- * grunt-comboPage
- * https://github.com/ginano/grunt-comboPage
+ * grunt-combopage
+ * https://github.com/ginano/grunt-combopage
  *
  * Copyright (c) 2013 ginano
  * Licensed under the MIT license.
@@ -14,18 +14,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // Configuration to be run (and then tested).
     combopage: {
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        }
-      },
       test: {
         files: {
-          'test_new.html': ['test.html'],
-        }
-      },
-      custom_options: {
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
+          'test/test_new.html': ['test/test.html'],
         }
       }
     }
@@ -35,6 +26,6 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['comboPage']);
+  grunt.registerTask('default', ['combopage']);
 
 };

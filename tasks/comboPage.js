@@ -77,9 +77,10 @@ module.exports = function(grunt) {
       filesDone.push(fileDone);
       //check this fileis Done
       function checkThisDone(){
-        var List = cssList.concat(jsList);
+        var allList = cssList.concat(jsList);
         //this file is process done!
-        checkAllDone(List, function(){
+        checkAllDone(allList, function(){
+          
           //do some thing after this
           //check the css syntax and merge/min it
           console.log('start merge and minfy all style content...');
@@ -112,12 +113,12 @@ module.exports = function(grunt) {
           console.log('\n------------------------------------********one file over********---------------------------------------');
           checkAllDone(filesDone,function(){
             Alldone();
-          })
+          });
         });
       }
       //process the style part
       console.log('start getting the style tags');
-      src = src.replace(/<link\s+\S*type="\s*text\/css\s*"[^>]*>|<style[^>]*>(?:[\S\s]*?)<\/style\s*>/ig,function(str){
+      src = src.replace(/<link\s+(?:[^>]+\s+)*type=["']\s*text\/css\s*["'](?:\s+[^>]+)*[\s+\/]?>|<style[^>]*>(?:[\S\s]*?)<\/style\s*>/ig,function(str){
         var href = str.match(/href=(?:"|')?([^"' >]+)(?:"|')?/i);
         var id='css'+cssList.length;
         //如果是外联引用
@@ -140,29 +141,6 @@ module.exports = function(grunt) {
           })
         }
         return '';
-      });
-      //merge the css content
-      //get the remote content first
-      console.log('start request the imported style file');
-      cssList.map(function(item){
-        var content;
-        if('link' == item.type){
-          //if the absolute path
-          if(/http:\/\//.test(item.url)){
-            getContent(item.url, function(res){
-              console.log('style:['+item.url+'] load success!');
-              item.source = res;
-              item.isDone=true;
-              checkThisDone();
-            });
-          }else{
-            content = grunt.file.read(path.dirname(filepath)+'/'+item.url);
-            console.log('style:['+item.url+'] read success!');
-            item.source = content;
-            item.isDone =true;
-            checkThisDone();
-          }
-        }
       });
       RegExp.index=0;
       //process the js part
@@ -192,7 +170,30 @@ module.exports = function(grunt) {
         }
         return '<script type="text/javascript">{{'+id+'}}</script>';
       });
+       console.log(jsList);
       //merge the css content
+      //get the remote content first
+      console.log('start request the imported style file');
+      cssList.map(function(item){
+        var content;
+        if('link' == item.type){
+          //if the absolute path
+          if(/http:\/\//.test(item.url)){
+            getContent(item.url, function(res){
+              console.log('style:['+item.url+'] load success!');
+              item.source = res;
+              item.isDone=true;
+              checkThisDone();
+            });
+          }else{
+            content = grunt.file.read(path.dirname(filepath)+'/'+item.url);
+            console.log('style:['+item.url+'] read success!');
+            item.source = content;
+            item.isDone =true;
+            checkThisDone();
+          }
+        }
+      });
       //get the remote content first
       console.log('start request the imported script file');
       jsList.map(function(item){
@@ -215,6 +216,7 @@ module.exports = function(grunt) {
           }
         }
       });
+      checkThisDone();
     });
   });
 

@@ -17,6 +17,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-combopage');
 ```
 
+You can run the testcase. change you path to ./node_modeules/grunt-combopage/, and run grunt. You could see the result file ./test/test_new.html was created! The ./Gruntfile.js has the base function of this task, so you could use it as that. If you have any question, you can contact me at sina weibo: http://weibo.com/ginano
 ## The "combopage" task
 
 ### Overview
@@ -25,9 +26,6 @@ In your project's Gruntfile, add a section named `combopage` to the data object 
 ```js
 grunt.initConfig({
   combopage: {
-    options: {
-      // Task-specific options go here.
-    },
     your_target: {
       // Target-specific file lists and/or options go here.
     },
@@ -57,9 +55,8 @@ In this example, the default options are used to do something with whatever. So 
 ```js
 grunt.initConfig({
   combopage: {
-    options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dest/file': ['src/sourcefile'],
     },
   },
 })
@@ -71,10 +68,6 @@ In this example, custom options are used to do something else with whatever else
 ```js
 grunt.initConfig({
   combopage: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
     files: {
       'dest/default_options': ['src/testing', 'src/123'],
     },
