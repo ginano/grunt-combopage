@@ -19,7 +19,12 @@ module.exports = function(grunt) {
          // cssPath:'output/',
           //cssVersion:true,
           jsPath:'output/index_all.js',
-          jsVersion:false
+          jsVersion:false,
+          comboHtml:true,
+          comboHtmlOptions:{
+            removeComments:true,
+            collapseWhitespace:true
+          }
         },
         files: {
           'test/test_new.html': ['test/test.html']

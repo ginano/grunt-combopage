@@ -14,6 +14,7 @@ module.exports = function(grunt) {
   var jshint = require("jshint").JSHINT;
   var uglify = require('uglify-js');
   var cssmin = require('clean-css');
+  var htmlmin = require('html-minifier');
 
   function getContent(url, callback, errorcall){
     var _content='';
@@ -57,7 +58,11 @@ module.exports = function(grunt) {
       cssPath:'',
       cssVersion:false,
       jsPath:'',
-      jsVersion:false
+      jsVersion:false,
+      comboHtml:true,
+      comboHtmlOptions:{
+        removeComments:true
+      }
     });
     var Alldone = this.async();
     var filesDone=[];
@@ -149,7 +154,15 @@ module.exports = function(grunt) {
           console.log('merge the script content to html file completed!');
         }
       }
-
+      //process html string
+      function mergeHTML(){
+        var _opt = options;
+        if(_opt.comboHtml){
+          fileDone.content= htmlmin.minify(fileDone.content, _opt.comboHtmlOptions);
+          console.log('minfy the html string with you options');
+        }
+        grunt.file.write(fileDone.dest, fileDone.content);
+      }
       //check this fileis Done
       function checkThisDone(){
         var allList = cssList.concat(jsList);
@@ -157,8 +170,8 @@ module.exports = function(grunt) {
         checkAllDone(allList, function(){
           mergeCSS();
           mergeJS();
+          mergeHTML();
           
-          grunt.file.write(fileDone.dest, fileDone.content);
           fileDone.isDone=true;
           console.log('\n--------------------------'+fileDone.src+' has been  compounded to '+fileDone.dest+'!--------------------------');
           checkAllDone(filesDone,function(){

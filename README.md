@@ -1,6 +1,6 @@
 # grunt-combopage
 
-> It's a tool for combo and min the html file, and it could minfiy the remotet css files and js files.
+> It's a tool for combo and min the html file, and it could minfiy the remotet css files and js files. all the content could be merged to one file!
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -62,6 +62,18 @@ Default value: `false`
 
 A Boolean value tell the task to add version number to the script import link, such as `'<script type="text/javascript" src="merge.js?v=201221212"></script>`'.
 
+#### options.comboHtml
+Type: `Boolean`
+Default value: `false`
+
+A Boolean value tell the task to minfy the html struct string. it depend on the node module html-minifier.
+
+#### options.comboHtmlOptions
+Type: `Obeject`
+Default value: `{}`
+
+the options for  html-minifier. View this document for more infomation about this options: 'http://perfectionkills.com/experimenting-with-html-minifier/#options'.
+
 
 ### Usage Examples
 
@@ -76,7 +88,14 @@ grunt.initConfig({
       //cssPath:'output/index_all.css',
       //cssVersion:true,
       jsPath:'output/index_all.js',
-      jsVersion:true
+      jsVersion:true,
+      // the options to open the htmlminifier, not recommend. 
+      //if you want ,please read this http://perfectionkills.com/experimenting-with-html-minifier/#options
+      comboHtml:true, 
+      comboHtmlOptions:{
+        removeComments:true,
+        collapseWhitespace:true
+      }
     },
     files: {
       'output/index.html': ['src/index.html'],
@@ -138,4 +157,6 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+2013-8-15 0.1.0 create the plugin with minfy function of js and css
+2013-8-19 0.1.1~0.1.3 update with minfy function of html, and add the options to create independent css file or js file. 
+
