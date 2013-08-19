@@ -67,6 +67,7 @@ module.exports = function(grunt) {
     var Alldone = this.async();
     var filesDone=[];
     var _v = Date.now();
+
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
       var filepath = f.src[0];
@@ -161,20 +162,23 @@ module.exports = function(grunt) {
           fileDone.content= htmlmin.minify(fileDone.content, _opt.comboHtmlOptions);
           console.log('minfy the html string with you options');
         }
-        grunt.file.write(fileDone.dest, fileDone.content);
       }
       //check this fileis Done
       function checkThisDone(){
         var allList = cssList.concat(jsList);
         //this file is process done!
         checkAllDone(allList, function(){
+          if(fileDone.isDone){
+            return;
+          }
           mergeCSS();
           mergeJS();
           mergeHTML();
-          
+          grunt.file.write(fileDone.dest, fileDone.content);
           fileDone.isDone=true;
           console.log('\n--------------------------'+fileDone.src+' has been  compounded to '+fileDone.dest+'!--------------------------');
           checkAllDone(filesDone,function(){
+            console.log('all task has done!');
             Alldone();
           });
         });
