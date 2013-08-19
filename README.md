@@ -35,32 +35,91 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.cssPath
 Type: `String`
-Default value: `',  '`
+Default value: `'./'`
 
-A string value that is used to do something with whatever.
+A string value that is used to as the merged CSS file, it an relative path of current path.
+if you have set this value( the value is not empty string or null), all the style content but ignored will be merged to one file, and placed in the path as you set. If this value isn't contain the fileName  with extension '.css', the merged css  fileName will be the same as html file.
 
-#### options.punctuation
+#### options.cssVersion
+Type: `Boolean`
+Default value: `false`
+
+A Boolean value tell the task to add version number to the link import link, such as `'<link type="text/css" href="merge.js?v=201221212"/>`'.
+
+
+#### options.jsPath
 Type: `String`
-Default value: `'.'`
+Default value: `'./'`
 
-A string value that is used to do something else with whatever else.
+A string value that is used to as the merged JS file, it an relative path of current path.
+if you have set this value( the value is not empty string or null), all the js content but ignored will be merged to one file, and placed in the path as you set. If this value isn't contain the fileName  with extension '.js', the merged js  fileName will be the same as html file.
+
+#### options.jsVersion
+Type: `Boolean`
+Default value: `false`
+
+A Boolean value tell the task to add version number to the script import link, such as `'<script type="text/javascript" src="merge.js?v=201221212"></script>`'.
+
 
 ### Usage Examples
 
 #### Default Options
 In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
 
+##### the Gruntfile.js 
 ```js
 grunt.initConfig({
   combopage: {
+    options:{
+      //cssPath:'output/index_all.css',
+      //cssVersion:true,
+      jsPath:'output/index_all.js',
+      jsVersion:true
+    },
     files: {
-      'dest/file': ['src/sourcefile'],
+      'output/index.html': ['src/index.html'],
     },
   },
-})
+});
+grunt.loadTasks('grunt-combopage');
+grunt.registerTask('default', ['combopage']);
+
 ```
+##### the src/index.html
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>grunt-combopage example</title>
+  <link rel="profile" href="http://gmpg.org/xfn/11" />
+  <link rel="stylesheet" type="text/css" media="all" href="http://www.ginano.net/wp-content/themes/twentyten/style.css" />
+  <!--ignore this content, keep this status-->
+  <link rel="stylesheet" type="text/css" media="all" ignore="true" href="http://www.ginano.net/wp-content/themes/twentyten/style.css" />
+  <link rel="stylesheet" type="text/css"   href="../css/style.css" />
+  <style type="text/css">
+    .class{color:#fff;}
+  </style>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <!--ignore this content, keep this status-->
+  <script type="text/javascript" src="http://www.ginano.net/js/underscore.js" ignore="true"></script>
+  <script type="text/javascript" src="http://www.ginano.net/js/backbone.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+    var a=1;
+  </script>
+</body>
+</html>
+```
+
+so, with above config, this file will create a new file output/index.html. And it will with one ignored css import and all other style content before '</head>`. Of course, it will with one ignored js file import and all other minified js content  in output/index_all.js, which could be imported before the end of body.
+
+if you want to prove it, please try 'grunt' command!
+
+just do it, and enjoy it!
 
 #### Custom Options
 In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
@@ -69,7 +128,7 @@ In this example, custom options are used to do something else with whatever else
 grunt.initConfig({
   combopage: {
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dest/default_options': ['src/testing'],
     },
   },
 })

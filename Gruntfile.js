@@ -15,8 +15,14 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     combopage: {
       test: {
+        options:{
+         // cssPath:'output/',
+          //cssVersion:true,
+          jsPath:'output/index_all.js',
+          jsVersion:false
+        },
         files: {
-          'test/test_new.html': ['test/test.html'],
+          'test/test_new.html': ['test/test.html']
         }
       }
     }
