@@ -118,10 +118,15 @@ grunt.registerTask('default', ['combopage']);
   <!--ignore this content, keep this status-->
   <link rel="stylesheet" type="text/css" media="all" ignore="true" href="http://www.ginano.net/wp-content/themes/twentyten/style.css" />
   <link rel="stylesheet" type="text/css"   href="../css/style.css" />
+  <!--this part with the attribute alone="true' will keep alone with the merge file-->
+  <style type="text/css" alone="true">
+    .class{color:#fff;}
+  </style> 
   <style type="text/css">
     .class{color:#fff;}
   </style>
-  <script type="text/javascript" src="../js/jquery.js"></script>
+  <!--the default script will merged to one file, whilch could be inserted to the end of body. but if you have set the attribute header="true", this part could be inserted to the end of head-->
+  <script type="text/javascript" src="../js/jquery.js" header="true"></script>
   <!--ignore this content, keep this status-->
   <script type="text/javascript" src="http://www.ginano.net/js/underscore.js" ignore="true"></script>
   <script type="text/javascript" src="http://www.ginano.net/js/backbone.js"></script>
@@ -158,5 +163,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 2013-8-15 0.1.0 create the plugin with minfy function of js and css
-2013-8-19 0.1.1~0.1.3 update with minfy function of html, and add the options to create independent css file or js file. 
+
+2013-8-19 0.1.1~0.1.4 update with minfy function of html, and add the options to create independent css file or js file. 
+
+2013-8-21 0.1.5~0.1.6 Firstly, i add the option of alone="true" for the script tag, which allow the content keep alone from the merge file. so you should be careful to use it because of the order dependencies of jscode. Secondly, change is the adding of header="true" to keep the merge file content inserted at the end of head tag. so you can merge two js file at the end of head and the end of body. The last update is to fixed the bug of style url such as background:url(xxx.png), because of that if i change the path of css content, the url should be changed too. 
 

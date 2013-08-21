@@ -16,8 +16,8 @@ module.exports = function(grunt) {
     combopage: {
       test: {
         options:{
-         // cssPath:'output/',
-          //cssVersion:true,
+          cssPath:'output/',
+          cssVersion:true,
           jsPath:'output/index_all.js',
           jsVersion:false,
           comboHtml:true,
@@ -38,5 +38,4 @@ module.exports = function(grunt) {
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['combopage']);
-
 };
