@@ -16,6 +16,7 @@ module.exports = function(grunt) {
   var uglify = require('uglify-js');
   var cssmin = require('clean-css');
   var htmlmin = require('html-minifier');
+  var Util = require('./lib/util').init(grunt);
 
   function getContent(url, callback, errorcall){
     var _content='';
@@ -71,6 +72,15 @@ module.exports = function(grunt) {
 
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
+      var opt = {
+        cssPath: f.cssPath || options.cssPath,
+        cssVersion:f.cssVersion || options.cssVersion,
+        jsPath:f.jsPath || options.jsPath,
+        jsVersion:f.jsVersion || options.jsVersion,
+        comboHtml:f.comboHtml || options.comboHtml,
+        comboHtmlOptions:f.comboHtmlOptions || options.comboHtmlOptions,
+      };
+      console.log(opt);
       var filepath = f.src[0];
       //just support one file
       var src =grunt.file.read(filepath);
@@ -135,8 +145,10 @@ module.exports = function(grunt) {
             }
             //progress the relative path
             //get the absolute path
+            Util.log(_url+'--------------');
             _p = path.normalize(path.dirname(fileDone.src)+'/'+_url);
-            return 'url('+path.relative(_opt.cssPath, _p)+')';
+            Util.log(_p+'--------------');
+            return 'url('+path.relative(_opt.cssPath, _p).replace(/\\/g,'/')+')';
           });
           return item.source;
         }
@@ -163,9 +175,16 @@ module.exports = function(grunt) {
               if(item.fromNet){
                 _path = URL.resolve(item.url, _url);
               }else{
-                _p = path.resolve(item.url, _url);
+                //_p = path.resolve(item.url, _url);
+                _p = path.resolve(path.dirname(fileDone.src), item.url);
+                _p = path.resolve(path.dirname(_p), _url);
+                Util.log(_p+'--------------');
                 relativeRootPath = _opt.cssPath?_opt.cssPath:fileDone.dest;
-                _path = path.relative(relativeRootPath, _p);
+                Util.log(relativeRootPath+'--------------');
+                //如果是文件名称结尾
+                relativeRootPath = /\.[a-z0-9]+$/i.test(relativeRootPath)?path.dirname(relativeRootPath):relativeRootPath;
+                
+                _path = path.relative(relativeRootPath, _p).replace(/\\/g, '/');
               }
               //console.log('result:-----'+_path);
               return 'url('+_path+')';
@@ -194,7 +213,7 @@ module.exports = function(grunt) {
             _temp = _opt.cssVersion?('?v='+_v):'';
             grunt.file.write(_value, cssmin.process(cssMerge));
             fileDone.content = fileDone.content.replace(/<\/head>/i,function(str){
-              return '<link rel="stylesheet" type="text/css" href="'+path.relative(path.dirname(fileDone.src), _value)+_temp+'" /></head>';
+              return '<link rel="stylesheet" type="text/css" href="'+path.relative(path.dirname(fileDone.dest), _value)+_temp+'" /></head>';
             });
             console.log('merge the style content to file ['+_value+'] completed!');
           }else{
@@ -227,7 +246,7 @@ module.exports = function(grunt) {
                 return uglify.minify(item.source, {fromString:true}).code;
               });
             }else{
-              if(item.isHeader){
+			  item.source =';'+item.source;              if(item.isHeader){
                 jsHeaderMerge +=item.source;
               }else{
                 jsFooterMerge += item.source;
@@ -251,20 +270,26 @@ module.exports = function(grunt) {
           //insert the file import
           if(_headerPath){
             fileDone.content = fileDone.content.replace(/<\/head\s*>/i,function(str){
-              return '<script  type="text/javascript" src="'+path.relative(path.dirname(fileDone.src), _headerPath)+_temp+'"></script></head>';
+              return '<script  type="text/javascript" src="'+path.relative(path.dirname(fileDone.dest), _headerPath)+_temp+'"></script></head>';
             });
             console.log('merge the script content to file ['+_headerPath+'] completed!');
           }
           if(_footerPath){
             fileDone.content = fileDone.content.replace(/<\/body>/i,function(str){
-              return '<script  type="text/javascript" src="'+path.relative(path.dirname(fileDone.src), _footerPath)+_temp+'"></script></body>';
+              return '<script  type="text/javascript" src="'+path.relative(path.dirname(fileDone.dest), _footerPath)+_temp+'"></script></body>';
             });
             console.log('merge the script content to file ['+_footerPath+'] completed!');
           }
         }else{
           jsList.forEach(function(item){
             var _js,_reg;
-            _js = uglify.minify(item.source, {fromString: true});
+            try{
+              _js = uglify.minify(item.source, {fromString: true}); 
+            }catch(e){
+              console.error('|||||||||||||||||||||---------minify error, please check your code !-------------||||||||||||||||||||||||\n');
+              console.log(item.source);
+              _js = {code:item.source};
+            }
             _reg = new RegExp('{{'+item.id+'}}','i');
             fileDone.content = fileDone.content.replace(_reg,function(str){
               console.log('script:['+item.id+'] replace completed!');
@@ -278,6 +303,7 @@ module.exports = function(grunt) {
       function mergeHTML(){
         var _opt = options;
         if(_opt.comboHtml){
+          fileDone.content
           fileDone.content= htmlmin.minify(fileDone.content, _opt.comboHtmlOptions);
           console.log('minfy the html string with you options');
         }
@@ -292,6 +318,7 @@ module.exports = function(grunt) {
           }
           mergeCSS();
           mergeJS();
+
           mergeHTML();
           grunt.file.write(fileDone.dest, fileDone.content);
           fileDone.isDone=true;
@@ -353,7 +380,7 @@ module.exports = function(grunt) {
         //is this part should be merge to another file insert at the front of body tag. The default place is at the end of body tag.
         isHeader = /\s+header=(?:"|')?true(?:"|')?/i.test(str);
 
-        href = str.match(/src=(?:"|')\s*(\S+)\s*(?:"|')/i);
+        href = str.match(/^<script[^>]+src=(?:"|')\s*(\S+)\s*(?:"|')/i);
         id='script'+jsList.length;
         //如果是外联引用
         if(href && href[1]){

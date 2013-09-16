@@ -26,9 +26,9 @@ module.exports = function(grunt) {
             collapseWhitespace:true
           }
         },
-        files: {
-          'test/test_new.html': ['test/test.html']
-        }
+        files: [
+          {dest:['test/test_new.html'],src: ['test/test.html'],cssPath:null,jsPath:null}
+        ]
       }
     }
   });
