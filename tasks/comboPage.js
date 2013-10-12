@@ -17,7 +17,6 @@ module.exports = function(grunt) {
   var cssmin = require('clean-css');
   var htmlmin = require('html-minifier');
   var Util = require('./lib/util').init(grunt);
-
   function getContent(url, callback, errorcall){
     var _content='';
     http.get(url, function(res) {
@@ -67,6 +66,7 @@ module.exports = function(grunt) {
       }
     });
     var Alldone = this.async();
+    var allDoneStamp= false;
     var filesDone=[];
     var _v = Date.now();
 
@@ -321,10 +321,13 @@ module.exports = function(grunt) {
 
           mergeHTML();
           grunt.file.write(fileDone.dest, fileDone.content);
-          fileDone.isDone=true;
           console.log('\n--------------------------'+fileDone.src+' has been  compounded to '+fileDone.dest+'!--------------------------');
+          fileDone.isDone=true;
           checkAllDone(filesDone,function(){
-            console.log('all task has done!');
+            if(allDoneStamp){
+              return;
+            }
+            allDoneStamp = true;
             Alldone();
           });
         });

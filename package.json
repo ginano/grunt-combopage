@@ -1,7 +1,7 @@
 {
   "name": "grunt-combopage",
   "description": "It's a tool for combo and min the html file, and it could minfiy the remotet css files and js files. all the content could be merged to one file!",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "homepage": "https://github.com/ginano/grunt-combopage",
   "author": {
     "name": "ginano",

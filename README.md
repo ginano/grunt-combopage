@@ -168,3 +168,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 2013-8-21 0.1.5~0.1.6 Firstly, i add the option of alone="true" for the script tag, which allow the content keep alone from the merge file. so you should be careful to use it because of the order dependencies of jscode. Secondly, change is the adding of header="true" to keep the merge file content inserted at the end of head tag. so you can merge two js file at the end of head and the end of body. The last update is to fixed the bug of style url such as background:url(xxx.png), because of that if i change the path of css content, the url should be changed too. 
 
+2013-10-12 0.1.7~0.1.8 fixed the bug of the end task run more than once
+
