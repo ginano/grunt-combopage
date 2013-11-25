@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         options:{
           cssPath:'output/',
           cssVersion:true,
-          jsPath:'output/index_all.js',
+          jsPath:'output/',
           jsVersion:false,
           comboHtml:true,
           comboHtmlOptions:{
@@ -27,7 +27,8 @@ module.exports = function(grunt) {
           }
         },
         files: [
-          {dest:['test/test_new.html'],src: ['test/test.html'],cssPath:null,jsPath:null}
+          //{dest:['test/test_new.html'],src: ['test/test.html'],cssPath:null,jsPath:null},
+          {src: ['test/*.html'],cssPath:null,jsPath:null}
         ]
       }
     }
