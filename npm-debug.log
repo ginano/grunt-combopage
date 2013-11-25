@@ -1,0 +1,182 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@1.1.66
+3 info using node@v0.8.15
+4 verbose publish [ '.' ]
+5 verbose read json e:\work\sourceCode\grunt-combopage\package.json
+6 verbose cache add [ '.', null ]
+7 silly cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { pathname: '.', path: '.', href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . C:\Users\bzhang\AppData\Roaming\npm-cache\3a52ce78-.lock
+11 verbose read json package.json
+12 verbose tar pack [ 'C:\\Users\\bzhang\\AppData\\Local\\Temp\\npm-5792\\1385363161998-0.6997352710459381\\tmp.tgz',
+12 verbose tar pack   '.' ]
+13 verbose tarball C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\tmp.tgz
+14 verbose folder .
+15 info prepublish grunt-combopage@0.1.7
+16 silly lockFile 7d7b2c35-61998-0-6997352710459381-tmp-tgz C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\tmp.tgz
+17 verbose lock C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\tmp.tgz C:\Users\bzhang\AppData\Roaming\npm-cache\7d7b2c35-61998-0-6997352710459381-tmp-tgz.lock
+18 silly lockFile 7d7b2c35-61998-0-6997352710459381-tmp-tgz C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\tmp.tgz
+19 verbose tar unpack C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\tmp.tgz
+20 silly lockFile ef96080b-61998-0-6997352710459381-package C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\package
+21 verbose lock C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\package C:\Users\bzhang\AppData\Roaming\npm-cache\ef96080b-61998-0-6997352710459381-package.lock
+22 silly gunzTarPerm modes [ '755', '644' ]
+23 silly gunzTarPerm extractEntry package.json
+24 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+25 silly gunzTarPerm extractEntry README.md
+26 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+27 silly gunzTarPerm extractEntry LICENSE
+28 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+29 silly gunzTarPerm extractEntry Gruntfile.js
+30 silly gunzTarPerm modified mode [ 'Gruntfile.js', 438, 420 ]
+31 silly gunzTarPerm extractEntry .jshintrc
+32 silly gunzTarPerm modified mode [ '.jshintrc', 438, 420 ]
+33 silly gunzTarPerm extractEntry LICENSE-MIT
+34 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 438, 420 ]
+35 silly gunzTarPerm extractEntry output/index_all.js
+36 silly gunzTarPerm modified mode [ 'output/index_all.js', 438, 420 ]
+37 silly gunzTarPerm extractEntry output/test.html.js
+38 silly gunzTarPerm modified mode [ 'output/test.html.js', 438, 420 ]
+39 silly gunzTarPerm extractEntry output/tst.html.js
+40 silly gunzTarPerm modified mode [ 'output/tst.html.js', 438, 420 ]
+41 silly gunzTarPerm extractEntry output/test.html.css
+42 silly gunzTarPerm modified mode [ 'output/test.html.css', 438, 420 ]
+43 silly gunzTarPerm extractEntry output/tst.html.css
+44 silly gunzTarPerm modified mode [ 'output/tst.html.css', 438, 420 ]
+45 silly gunzTarPerm extractEntry tasks/combopage.js
+46 silly gunzTarPerm modified mode [ 'tasks/combopage.js', 438, 420 ]
+47 silly gunzTarPerm extractEntry tasks/lib/util.js
+48 silly gunzTarPerm modified mode [ 'tasks/lib/util.js', 438, 420 ]
+49 silly gunzTarPerm extractEntry test/test.combo
+50 silly gunzTarPerm modified mode [ 'test/test.combo', 438, 420 ]
+51 silly gunzTarPerm extractEntry test/test.html
+52 silly gunzTarPerm modified mode [ 'test/test.html', 438, 420 ]
+53 silly gunzTarPerm extractEntry test/test_new.html
+54 silly gunzTarPerm modified mode [ 'test/test_new.html', 438, 420 ]
+55 silly gunzTarPerm extractEntry test/tst.combo
+56 silly gunzTarPerm modified mode [ 'test/tst.combo', 438, 420 ]
+57 silly gunzTarPerm extractEntry test/tst.html
+58 silly gunzTarPerm modified mode [ 'test/tst.html', 438, 420 ]
+59 verbose read json C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\package\package.json
+60 silly lockFile ef96080b-61998-0-6997352710459381-package C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\package
+61 verbose from cache C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\package\package.json
+62 verbose tar pack [ 'C:\\Users\\bzhang\\AppData\\Roaming\\npm-cache\\grunt-combopage\\0.1.7\\package.tgz',
+62 verbose tar pack   'C:\\Users\\bzhang\\AppData\\Local\\Temp\\npm-5792\\1385363161998-0.6997352710459381\\package' ]
+63 verbose tarball C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package.tgz
+64 verbose folder C:\Users\bzhang\AppData\Local\Temp\npm-5792\1385363161998-0.6997352710459381\package
+65 silly lockFile c1145e13-runt-combopage-0-1-7-package-tgz C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package.tgz
+66 verbose lock C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package.tgz C:\Users\bzhang\AppData\Roaming\npm-cache\c1145e13-runt-combopage-0-1-7-package-tgz.lock
+67 silly lockFile c1145e13-runt-combopage-0-1-7-package-tgz C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package.tgz
+68 silly lockFile b3c292d4-he-grunt-combopage-0-1-7-package C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package
+69 verbose lock C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package C:\Users\bzhang\AppData\Roaming\npm-cache\b3c292d4-he-grunt-combopage-0-1-7-package.lock
+70 silly lockFile b3c292d4-he-grunt-combopage-0-1-7-package C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package
+71 verbose tar unpack C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package.tgz
+72 silly lockFile b3c292d4-he-grunt-combopage-0-1-7-package C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package
+73 verbose lock C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package C:\Users\bzhang\AppData\Roaming\npm-cache\b3c292d4-he-grunt-combopage-0-1-7-package.lock
+74 silly gunzTarPerm modes [ '755', '644' ]
+75 silly gunzTarPerm extractEntry package.json
+76 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+77 silly gunzTarPerm extractEntry README.md
+78 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+79 silly gunzTarPerm extractEntry LICENSE
+80 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+81 silly gunzTarPerm extractEntry Gruntfile.js
+82 silly gunzTarPerm modified mode [ 'Gruntfile.js', 438, 420 ]
+83 silly gunzTarPerm extractEntry .jshintrc
+84 silly gunzTarPerm modified mode [ '.jshintrc', 438, 420 ]
+85 silly gunzTarPerm extractEntry LICENSE-MIT
+86 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 438, 420 ]
+87 silly gunzTarPerm extractEntry output/index_all.js
+88 silly gunzTarPerm modified mode [ 'output/index_all.js', 438, 420 ]
+89 silly gunzTarPerm extractEntry output/test.html.js
+90 silly gunzTarPerm modified mode [ 'output/test.html.js', 438, 420 ]
+91 silly gunzTarPerm extractEntry output/tst.html.js
+92 silly gunzTarPerm modified mode [ 'output/tst.html.js', 438, 420 ]
+93 silly gunzTarPerm extractEntry output/test.html.css
+94 silly gunzTarPerm modified mode [ 'output/test.html.css', 438, 420 ]
+95 silly gunzTarPerm extractEntry output/tst.html.css
+96 silly gunzTarPerm modified mode [ 'output/tst.html.css', 438, 420 ]
+97 silly gunzTarPerm extractEntry tasks/combopage.js
+98 silly gunzTarPerm modified mode [ 'tasks/combopage.js', 438, 420 ]
+99 silly gunzTarPerm extractEntry tasks/lib/util.js
+100 silly gunzTarPerm modified mode [ 'tasks/lib/util.js', 438, 420 ]
+101 silly gunzTarPerm extractEntry test/test.combo
+102 silly gunzTarPerm modified mode [ 'test/test.combo', 438, 420 ]
+103 silly gunzTarPerm extractEntry test/test.html
+104 silly gunzTarPerm modified mode [ 'test/test.html', 438, 420 ]
+105 silly gunzTarPerm extractEntry test/test_new.html
+106 silly gunzTarPerm modified mode [ 'test/test_new.html', 438, 420 ]
+107 silly gunzTarPerm extractEntry test/tst.combo
+108 silly gunzTarPerm modified mode [ 'test/tst.combo', 438, 420 ]
+109 silly gunzTarPerm extractEntry test/tst.html
+110 silly gunzTarPerm modified mode [ 'test/tst.html', 438, 420 ]
+111 verbose read json C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package\package.json
+112 silly lockFile b3c292d4-he-grunt-combopage-0-1-7-package C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package
+113 silly shasum updated bytes 40960
+114 silly shasum updated bytes 40960
+115 silly shasum updated bytes 40960
+116 silly shasum updated bytes 40960
+117 silly shasum updated bytes 40960
+118 silly shasum updated bytes 40960
+119 silly shasum updated bytes 26584
+120 info shasum 1d8d048c0db439f510f2d6ea8b382fd744b33126
+120 info shasum C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package.tgz
+121 verbose from cache C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package\package.json
+122 verbose chmod C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package.tgz 644
+123 silly chown skipping for windows C:\Users\bzhang\AppData\Roaming\npm-cache\grunt-combopage\0.1.7\package.tgz
+124 silly lockFile 3a52ce78- .
+125 silly publish { name: 'grunt-combopage',
+125 silly publish   description: 'It\'s a tool for combo and min the html file, and it could minfiy the remotet css files and js files. all the content could be merged to one file!',
+125 silly publish   version: '0.1.7',
+125 silly publish   homepage: 'https://github.com/ginano/grunt-combopage',
+125 silly publish   author:
+125 silly publish    { name: 'ginano',
+125 silly publish      email: 'www@ginano.net',
+125 silly publish      url: 'http://www.ginano.net' },
+125 silly publish   repository:
+125 silly publish    { type: 'git',
+125 silly publish      url: 'git://github.com/ginano/grunt-combopage.git' },
+125 silly publish   bugs: { url: 'https://github.com/ginano/grunt-combopage/issues' },
+125 silly publish   licenses:
+125 silly publish    [ { type: 'MIT',
+125 silly publish        url: 'https://github.com/ginano/grunt-combopage/blob/master/LICENSE-MIT' } ],
+125 silly publish   main: 'Gruntfile.js',
+125 silly publish   engines: { node: '>= 0.8.0' },
+125 silly publish   scripts: { test: 'grunt test' },
+125 silly publish   dependencies:
+125 silly publish    { 'clean-css': '~1.0.12',
+125 silly publish      'uglify-js': '~2.3.6',
+125 silly publish      jshint: '~2.1.0',
+125 silly publish      'html-minifier': '~0.5.2' },
+125 silly publish   peerDependencies: { grunt: '~0.4.1' },
+125 silly publish   keywords: [ 'gruntplugin', 'html', 'min', 'combo' ],
+125 silly publish   readme: '# grunt-combopage\r\n\r\n> It\'s a tool for combo and min the html file, and it could minfiy the remotet css files and js files. all the content could be merged to one file!\r\n\r\n## Getting Started\r\nThis plugin requires Grunt `~0.4.1`\r\n\r\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with that process, you may install this plugin with this command:\r\n\r\n```shell\r\nnpm install grunt-combopage --save-dev\r\n```\r\n\r\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\r\n\r\n```js\r\ngrunt.loadNpmTasks(\'grunt-combopage\');\r\n```\r\n\r\nYou can run the testcase. change you path to ./node_modeules/grunt-combopage/, and run grunt. You could see the result file ./test/test_new.html was created! The ./Gruntfile.js has the base function of this task, so you could use it as that. If you have any question, you can contact me at sina weibo: http://weibo.com/ginano\r\n## The "combopage" task\r\n\r\n### Overview\r\nIn your project\'s Gruntfile, add a section named `combopage` to the data object passed into `grunt.initConfig()`.\r\n\r\n```js\r\ngrunt.initConfig({\r\n  combopage: {\r\n    your_target: {\r\n      // Target-specific file lists and/or options go here.\r\n    },\r\n  },\r\n})\r\n```\r\n\r\n### Options\r\n\r\n#### options.cssPath\r\nType: `String`\r\nDefault value: `\'./\'`\r\n\r\nA string value that is used to as the merged CSS file, it an relative path of current path.\r\nif you have set this value( the value is not empty string or null), all the style content but ignored will be merged to one file, and placed in the path as you set. If this value isn\'t contain the fileName  with extension \'.css\', the merged css  fileName will be the same as html file.\r\n\r\n#### options.cssVersion\r\nType: `Boolean`\r\nDefault value: `false`\r\n\r\nA Boolean value tell the task to add version number to the link import link, such as `\'<link type="text/css" href="merge.js?v=201221212"/>`\'.\r\n\r\n\r\n#### options.jsPath\r\nType: `String`\r\nDefault value: `\'./\'`\r\n\r\nA string value that is used to as the merged JS file, it an relative path of current path.\r\nif you have set this value( the value is not empty string or null), all the js content but ignored will be merged to one file, and placed in the path as you set. If this value isn\'t contain the fileName  with extension \'.js\', the merged js  fileName will be the same as html file.\r\n\r\n#### options.jsVersion\r\nType: `Boolean`\r\nDefault value: `false`\r\n\r\nA Boolean value tell the task to add version number to the script import link, such as `\'<script type="text/javascript" src="merge.js?v=201221212"></script>`\'.\r\n\r\n#### options.comboHtml\r\nType: `Boolean`\r\nDefault value: `false`\r\n\r\nA Boolean value tell the task to minfy the html struct string. it depend on the node module html-minifier.\r\n\r\n#### options.comboHtmlOptions\r\nType: `Obeject`\r\nDefault value: `{}`\r\n\r\nthe options for  html-minifier. View this document for more infomation about this options: \'http://perfectionkills.com/experimenting-with-html-minifier/#options\'.\r\n\r\n\r\n### Usage Examples\r\n\r\n#### Default Options\r\nIn this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`\r\n\r\n##### the Gruntfile.js \r\n```js\r\ngrunt.initConfig({\r\n  combopage: {\r\n    options:{\r\n      //cssPath:\'output/index_all.css\',\r\n      //cssVersion:true,\r\n      jsPath:\'output/index_all.js\',\r\n      jsVersion:true,\r\n      // the options to open the htmlminifier, not recommend. \r\n      //if you want ,please read this http://perfectionkills.com/experimenting-with-html-minifier/#options\r\n      comboHtml:true, \r\n      comboHtmlOptions:{\r\n        removeComments:true,\r\n        collapseWhitespace:true\r\n      }\r\n    },\r\n    files: {\r\n      \'output/index.html\': [\'src/index.html\'],\r\n    },\r\n  },\r\n});\r\ngrunt.loadTasks(\'grunt-combopage\');\r\ngrunt.registerTask(\'default\', [\'combopage\']);\r\n\r\n```\r\n##### the src/index.html\r\n```html\r\n<!DOCTYPE html>\r\n<html lang="zh-CN">\r\n<head>\r\n  <meta charset="UTF-8" />\r\n  <title>grunt-combopage example</title>\r\n  <link rel="profile" href="http://gmpg.org/xfn/11" />\r\n  <link rel="stylesheet" type="text/css" media="all" href="http://www.ginano.net/wp-content/themes/twentyten/style.css" />\r\n  <!--ignore this content, keep this status-->\r\n  <link rel="stylesheet" type="text/css" media="all" ignore="true" href="http://www.ginano.net/wp-content/themes/twentyten/style.css" />\r\n  <link rel="stylesheet" type="text/css"   href="../css/style.css" />\r\n  <!--this part with the attribute alone="true\' will keep alone with the merge file-->\r\n  <style type="text/css" alone="true">\r\n    .class{color:#fff;}\r\n  </style> \r\n  <style type="text/css">\r\n    .class{color:#fff;}\r\n  </style>\r\n  <!--the default script will merged to one file, whilch could be inserted to the end of body. but if you have set the attribute header="true", this part could be inserted to the end of head-->\r\n  <script type="text/javascript" src="../js/jquery.js" header="true"></script>\r\n  <!--ignore this content, keep this status-->\r\n  <script type="text/javascript" src="http://www.ginano.net/js/underscore.js" ignore="true"></script>\r\n  <script type="text/javascript" src="http://www.ginano.net/js/backbone.js"></script>\r\n</head>\r\n<body>\r\n  <script type="text/javascript">\r\n    var a=1;\r\n  </script>\r\n</body>\r\n</html>\r\n```\r\n\r\nso, with above config, this file will create a new file output/index.html. And it will with one ignored css import and all other style content before \'</head>`. Of course, it will with one ignored js file import and all other minified js content  in output/index_all.js, which could be imported before the end of body.\r\n\r\nif you want to prove it, please try \'grunt\' command!\r\n\r\njust do it, and enjoy it!\r\n\r\n#### Custom Options\r\nIn this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`\r\n\r\n```js\r\ngrunt.initConfig({\r\n  combopage: {\r\n    files: {\r\n      \'dest/default_options\': [\'src/testing\'],\r\n    },\r\n  },\r\n})\r\n```\r\n\r\n## Contributing\r\nIn lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).\r\n\r\n## Release History\r\n2013-8-15 0.1.0 create the plugin with minfy function of js and css\r\n\r\n2013-8-19 0.1.1~0.1.4 update with minfy function of html, and add the options to create independent css file or js file. \r\n\r\n2013-8-21 0.1.5~0.1.6 Firstly, i add the option of alone="true" for the script tag, which allow the content keep alone from the merge file. so you should be careful to use it because of the order dependencies of jscode. Secondly, change is the adding of header="true" to keep the merge file content inserted at the end of head tag. so you can merge two js file at the end of head and the end of body. The last update is to fixed the bug of style url such as background:url(xxx.png), because of that if i change the path of css content, the url should be changed too. \r\n2013-11-25 0.1.7 support grouping the content. in other word, you can spec that a.js and b.js compress to ab.js, but c.js and d.js to cd.js. please read the source code \'./task/*\' for more functions.\r\n\r\n',
+125 silly publish   readmeFilename: 'README.md',
+125 silly publish   _id: 'grunt-combopage@0.1.7',
+125 silly publish   dist: { shasum: '1d8d048c0db439f510f2d6ea8b382fd744b33126' } }
+126 verbose url raw grunt-combopage
+127 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-combopage' ]
+128 verbose url resolved https://registry.npmjs.org/grunt-combopage
+129 info trying registry request attempt 1 at 15:06:08
+130 http PUT https://registry.npmjs.org/grunt-combopage
+131 http 409 https://registry.npmjs.org/grunt-combopage
+132 verbose url raw grunt-combopage
+133 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-combopage' ]
+134 verbose url resolved https://registry.npmjs.org/grunt-combopage
+135 info trying registry request attempt 1 at 15:06:10
+136 http GET https://registry.npmjs.org/grunt-combopage
+137 http 200 https://registry.npmjs.org/grunt-combopage
+138 error publish fail Cannot publish over existing version.
+138 error publish fail Bump the 'version' field, set the --force flag, or
+138 error publish fail     npm unpublish 'grunt-combopage@0.1.7'
+138 error publish fail and try again
+139 error System Windows_NT 6.1.7601
+140 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+141 error cwd e:\work\sourceCode\grunt-combopage
+142 error node -v v0.8.15
+143 error npm -v 1.1.66
+144 error code EPUBLISHCONFLICT
+145 verbose exit [ 1, true ]

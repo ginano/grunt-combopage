@@ -167,5 +167,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 2013-8-19 0.1.1~0.1.4 update with minfy function of html, and add the options to create independent css file or js file. 
 
 2013-8-21 0.1.5~0.1.6 Firstly, i add the option of alone="true" for the script tag, which allow the content keep alone from the merge file. so you should be careful to use it because of the order dependencies of jscode. Secondly, change is the adding of header="true" to keep the merge file content inserted at the end of head tag. so you can merge two js file at the end of head and the end of body. The last update is to fixed the bug of style url such as background:url(xxx.png), because of that if i change the path of css content, the url should be changed too. 
-2013-11-25 0.1.7 support grouping the content. in other word, you can spec that a.js and b.js compress to ab.js, but c.js and d.js to cd.js. please read the source code './task/*' for more functions.
+
+2013-10-12 0.1.7~0.1.8 fixed the bug of the end task run more than once
+
+2013-11-25 0.1.9 support grouping the content. in other word, you can spec that a.js and b.js compress to ab.js, but c.js and d.js to cd.js. please read the source code './task/*' for more functions.
 
