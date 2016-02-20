@@ -32,10 +32,10 @@
     "clean-css": "~1.0.12",
     "uglify-js": "~2.3.6",
     "jshint": "~2.1.0",
-    "html-minifier":"~0.5.2"
+    "html-minifier": "~0.5.2"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin",
